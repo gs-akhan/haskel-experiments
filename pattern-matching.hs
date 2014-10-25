@@ -19,8 +19,5 @@ fact a = a * fact(a - 1)
 first :: (a, b , c) -> a
 first (a, b, c) = a
 
-
--- To add all values in Tuples, not related to pattern matching 
-
-testMethod :: (String a, Integral b) => (a, b, a) -> a 
-addAllTup (a, b, c) = a 
+addAllTuples :: (Integral a) => [(a, a)] -> [a]
+addAllTuples xs = [a+b | (a, b) <- xs]
