@@ -21,3 +21,11 @@ first (a, b, c) = a
 
 addAllTuples :: (Integral a) => [(a, a)] -> [a]
 addAllTuples xs = [a+b | (a, b) <- xs]
+
+-- Some complex pattern matching added.. using the : pattern
+
+tell :: (Show a) => [a] -> String
+tell [] = "This list is empty"
+tell (x : []) = "This has one element" ++ show x
+tell (x : y : _) = "Too many elements, the first element is " ++ show x
+
