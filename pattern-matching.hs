@@ -64,4 +64,17 @@ areYouFit weight height
 	| mass >= 10.0 = True
 	| mass <= 10.0 = False
 	| otherwise = False
-	where mass = weight / height
+	where 
+		mass = weight / height
+
+
+-- Case expression Sytax
+{-
+	case <expression> of pattern -> result
+						 pattern -> result
+
+-}	
+describeList :: [a] -> String  
+describeList xs = "The list is " ++ case xs of [] -> "empty."  
+                                               [x] -> "a singleton list."   
+                                               xs -> "a longer list."
