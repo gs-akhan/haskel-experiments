@@ -37,6 +37,17 @@ take' (x:xs) times
 	Reverse the array
 -}
 
-reverse' :: (Integral a) => [a] -> [a]
+reverse' :: (Ord a) => [a] -> [a]
 reverse' [] = []
-reverse' (x:xs) = reverse' xs ++ [x] 
+reverse' (x:xs) = reverse' xs ++ [x]
+
+
+{-
+Check if the element exists' in the List
+-}
+
+exists' :: (Ord a) => [a] -> a -> Bool
+exists' [] num = False
+exists' (x:xs) num
+	| x == num = True
+	| otherwise = exists' xs num 
