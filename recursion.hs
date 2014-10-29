@@ -33,4 +33,10 @@ take' (x:xs) times
 	| times == 0 = []
 	| otherwise = x : take' xs (times - 1)
 
-	
+{-
+	Reverse the array
+-}
+
+reverse' :: (Integral a) => [a] -> [a]
+reverse' [] = []
+reverse' (x:xs) = reverse' xs ++ [x] 
