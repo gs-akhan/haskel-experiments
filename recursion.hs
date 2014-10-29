@@ -19,5 +19,18 @@ example replicate' 5 3 => [5,5,5]
 replicate' :: Int -> Int -> [Int]
 replicate' num times 
 	| times <= 0 = []
-	| otherwise = num : replicate' num (times -1 )
+	| otherwise = num : replicate' num (times -1)
 
+{-
+Take function , 
+
+returns that many values from the list, 
+-}
+
+take' :: (Integral a) => [a] -> a -> [a]
+take' [] a = []
+take' (x:xs) times
+	| times == 0 = []
+	| otherwise = x : take' xs (times - 1)
+
+	
