@@ -61,5 +61,5 @@ example grep' start end ::  grep' [1,2,4,6] 1 1 => [2]
 grepNew :: (Ord a, Integral b) => [a] -> b -> b -> [a]
 grepNew [] a b = []
 grepNew [a] _ 0 = []
-grepNew [a] st en
+grepNew [a] st en = [a]
 	
