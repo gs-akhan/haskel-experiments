@@ -57,9 +57,10 @@ Grep the list using two indexes
 example grep' start end ::  grep' [1,2,4,6] 1 1 => [2]
 -}
 
--- TODO Complete this function . 
-grepNew :: (Ord a, Integral b) => [a] -> b -> b -> [a]
+grepNew :: [Int] -> Int -> Int -> [Int]
 grepNew [] a b = []
 grepNew [a] _ 0 = []
-grepNew [a] st en = [a]
-	
+grepNew xs str end
+	| str > length xs - 1 = [] 
+	| str > end = []
+	| otherwise = (xs !! str) : (grepNew xs (str + 1) end)
