@@ -50,4 +50,16 @@ exists' :: (Ord a) => [a] -> a -> Bool
 exists' [] num = False
 exists' (x:xs) num
 	| x == num = True
-	| otherwise = exists' xs num 
+	| otherwise = exists' xs num
+
+{-
+Grep the list using two indexes
+example grep' start end ::  grep' [1,2,4,6] 1 1 => [2]
+-}
+
+-- TODO Complete this function . 
+grepNew :: (Ord a, Integral b) => [a] -> b -> b -> [a]
+grepNew [] a b = []
+grepNew [a] _ 0 = []
+grepNew [a] st en
+	
