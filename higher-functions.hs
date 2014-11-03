@@ -38,3 +38,12 @@ filterEven f xs
 filterEven' :: [Int] -> [Int]
 filterEven' a = [z | z <- a, isEven z]
 
+{-Zip with using a function-}
+{-Take a functions and then using that function performs operation on two lists to concat them at the end-}
+
+zipWith' :: (Int -> Int -> Int) -> [Int] -> [Int] -> [Int]
+zipWith' _ _ [] = []
+zipWith' _ [] _  = []
+zipWith' f (x:xs) (y:ys) = f x  y : zipWith' f xs ys 
+
+
