@@ -55,3 +55,12 @@ filterEvenFromList f [] = []
 filterEvenFromList f (x:xs) 
 	| f x == 0 = x : filterEvenFromList f xs
 	| otherwise = filterEvenFromList f xs
+
+{-Filter the List based on the operator function passed. For example you can use this as
+filterListByOperator ( > 3) [1,3,4,6] => [4,6]
+-}
+filterListByOperator :: (Int -> Bool) -> [Int] -> [Int]
+filterListByOperator f [] = []
+filterListByOperator f (x:xs)
+	| f x = x : filterListByOperator f xs
+	| otherwise = filterListByOperator f xs
