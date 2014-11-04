@@ -46,4 +46,12 @@ zipWith' _ _ [] = []
 zipWith' _ [] _  = []
 zipWith' f (x:xs) (y:ys) = f x  y : zipWith' f xs ys 
 
+{-
+Filter all the even elements in the List using higer order function
+-}
 
+filterEvenFromList :: (Int -> Int) -> [Int] -> [Int]
+filterEvenFromList f [] = []
+filterEvenFromList f (x:xs) 
+	| f x == 0 = x : filterEvenFromList f xs
+	| otherwise = filterEvenFromList f xs
