@@ -59,8 +59,16 @@ filterEvenFromList f (x:xs)
 {-Filter the List based on the operator function passed. For example you can use this as
 filterListByOperator ( > 3) [1,3,4,6] => [4,6]
 -}
+
 filterListByOperator :: (Int -> Bool) -> [Int] -> [Int]
 filterListByOperator f [] = []
 filterListByOperator f (x:xs)
 	| f x = x : filterListByOperator f xs
 	| otherwise = filterListByOperator f xs
+
+{--}  
+
+largestDivisibleBy2 :: Int
+largestDivisibleBy2 
+	| otherwise = head (reverse ((filter f [1..1000])))
+	where f x = x `mod` 2 == 0 
