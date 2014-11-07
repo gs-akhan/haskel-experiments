@@ -4,3 +4,9 @@
 --}
 returnFirstWord :: [Char] -> [Char]
 returnFirstWord x = takeWhile ( /= ' ' ) x
+
+{-return all the values whos squre is less than 2000-}
+{-Haskell's lazy evaluation kicks in really well. You just have to define a infinite list-}
+
+returnPow2Less2000 :: (Integral a) => [a]
+returnPow2Less2000 = takeWhile ( <= 20000)  (map ( ^2 ) [1..])
