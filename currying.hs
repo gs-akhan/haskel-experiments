@@ -9,4 +9,4 @@ divThree = ( /3 )
 
 multiplyTheListBy2 = map (*2) [1..20]
 
-divideListBy2 = map (/2) [1..20] 
+divideListBy2 = map (/2) [1..20]

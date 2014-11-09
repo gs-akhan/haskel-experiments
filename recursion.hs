@@ -64,3 +64,20 @@ grepNew xs str end
 	| str > length xs - 1 = [] 
 	| str > end = []
 	| otherwise = (xs !! str) : (grepNew xs (str + 1) end)
+
+
+{-Filters the largest even in the list-}
+
+filterLargestEven :: [Int] -> Int
+filterLargestEven [a] = a
+filterLargestEven (x:xs)
+	| ( even x ) &&  ( x > filterLargestEven xs) = x
+	| otherwise = filterLargestEven xs
+
+
+
+getHighestPower fn [a] = a
+getHighestPower fn (x:xs)
+	| (fn x) > fn (getHighestPower fn xs) = x
+	| otherwise = getHighestPower fn xs
+
