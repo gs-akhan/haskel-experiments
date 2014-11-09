@@ -37,3 +37,12 @@ sumupEverything = foldl (\ acc x -> acc + x) 0 [1..20]
 {-Right Fold example. this takes the accumulator at the end-}
 
 sumupEverything' = foldr (\x acc -> x : acc) [] [1..20]  
+
+filterEvens = foldr (\ x acc -> if x `mod` 2 == 0 then x : acc else [] ++ acc) [] [1..20] 
+
+returnMaxSquare fn [x] = x; 
+returnMaxSquare fn (x:xs)
+				| fn x > fn (returnMaxSquare fn xs) = x
+				| otherwise = returnMaxSquare fn xs
+
+returnMaxSquareUsingFolds fn xs = foldl (\ acc x -> if fn x > fn acc then x else acc)
