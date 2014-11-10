@@ -1,3 +1,4 @@
+import Data.List
 {-This file has a lot of currying examples-}
 addTwo   = ( +2 )
 
@@ -16,7 +17,5 @@ curriedFunctions xs = map (\x y  -> x * y) xs
 currFooAtIdx idx = curriedFunctions [1..20] !! idx
 
 curriedFunctionsUsingFoldl xs = foldl (\acc curr -> acc ++ [\a -> curr * a]) [] xs
-
-
 
 

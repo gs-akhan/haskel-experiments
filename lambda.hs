@@ -61,4 +61,5 @@ reverseUsingFolds xs = foldl (\acc curr -> curr:acc) [] xs
 
 mapUsingFolds fn xs = foldl (\acc curr -> curr:acc) [] xs 
 
-
+{-Returns the unique values in the LIST. this is same as nub method which is available in Data.List -}
+uniq xs = reverse (foldl (\acc curr -> if ((curr `elem` acc) == False) then (curr : acc) else ( acc )) [] xs)
