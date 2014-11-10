@@ -46,3 +46,19 @@ returnMaxSquare fn (x:xs)
 				| otherwise = returnMaxSquare fn xs
 
 returnMaxSquareUsingFolds fn xs = foldl (\ acc x -> if fn x > fn acc then x else acc)
+
+{-Finds the sum of all the elements in a List-}
+sum' :: (Num a) => [a] -> a  
+sum' = foldl (+) 0
+
+{-Pass function and a list to this method-}
+{-This is a combin example for both currying and folds-}
+genFoldL fn = (foldr fn 1)
+
+reverseUsingFolds xs = foldl (\acc curr -> curr:acc) [] xs
+
+{-Function composition using the dot operator -}
+
+mapUsingFolds fn xs = foldl (\acc curr -> curr:acc) [] xs 
+
+
