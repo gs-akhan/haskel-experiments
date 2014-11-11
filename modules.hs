@@ -11,8 +11,6 @@
 	>> :m + Data.List(nub, sort)
 -}
 import Data.List
-
 {-Returns the unique values inthe List-}
 
 uniq xs = nub xs
-
